@@ -1,6 +1,6 @@
 var app = "";
 
-app = angular.module('mideUniversidades', []);
+app = angular.module('mideUniversidades', ['angularUtils.directives.dirPagination']);
 
 app.controller('mideUniversidadesController', function($scope, $http) {
 

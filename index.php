@@ -1,7 +1,7 @@
 <script type="text/javascript" src="js/angular.js"></script>
 <script type="text/javascript" src="js/angular.ng-modules.js"></script>
+<script type="text/javascript" src="js/dirPagination.js"></script>
 <script type="text/javascript" src="js/mideUniversidadesController.js"></script>
-
 
 <div ng-module="mideUniversidades" >
     <div ng-controller="mideUniversidadesController">
@@ -82,7 +82,7 @@
             </thead>
 
             <tbody>
-                <tr ng-repeat="arrayUniversities in universities| filter:filters">
+                <tr dir-paginate="arrayUniversities in universities| filter:filters |itemsPerPage:10">
                     <td>{{arrayUniversities.position}}</td>
                     <td>{{arrayUniversities.nameUniversity}}</td>
                     <td>{{arrayUniversities.sector}}</td>
@@ -91,6 +91,8 @@
                 </tr>
             </tbody>
         </table>
+        
+        <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" ></dir-pagination-controls>
 
     </div>
 </div>
